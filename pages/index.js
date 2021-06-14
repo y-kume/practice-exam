@@ -1,27 +1,27 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
+// import { useEffect, useState } from 'react'
+// import styles from '../styles/Home.module.css'
 
-//宣言
-export default function Home() {
-  const [mondaibun, setTime] = useState(null)
-  const [mondai_a, mondai_1] = useState(null)
-  const [mondai_b, mondai_2] = useState(null)
-  const [mondai_c, mondai_3] = useState(null)
-  const [mondai_d, mondai_4] = useState(null)
-  const [time, settimer] = useState(null)
+// //宣言
+// export default function Home() {
+//   const [mondaibun, setTime] = useState(null)
+//   const [mondai_a, mondai_1] = useState(null)
+//   const [mondai_b, mondai_2] = useState(null)
+//   const [mondai_c, mondai_3] = useState(null)
+//   const [mondai_d, mondai_4] = useState(null)
+//   const [time, settimer] = useState(null)
   useEffect(() => {
 
     //問題文をセットするAPI
     fetch('/api/exaams')
       .then(res => res.json())
       .then(data => {
-        setTime(data[0].mondaibun)
-        mondai_1(data[0].houzi)
-        mondai_2(data[1].houzi)
-        mondai_3(data[2].houzi)
-        mondai_4(data[3].houzi)
+        // setTime(data[0].mondaibun)
+        // mondai_1(data[0].houzi)
+        // mondai_2(data[1].houzi)
+        // mondai_3(data[2].houzi)
+        // mondai_4(data[3].houzi)
 
         console.log(data)
       });setInterval(() =>
@@ -70,10 +70,10 @@ return (
         </h1>
           <p>問題</p>
         <div >{mondaibun}</div>
-        <p>ア{mondai_a}</p>
+        {/* <p>ア{mondai_a}</p>
         <p>イ{mondai_b}</p>
         <p>ウ{mondai_c}</p>
-        <p>エ{mondai_d}</p>
+        <p>エ{mondai_d}</p> */}
 
         <div id="time">
           
