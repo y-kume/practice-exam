@@ -70,10 +70,7 @@ return (
         </h1>
           <p>問題</p>
         <div >{mondaibun}</div>
-        {/* <p>ア{mondai_a}</p>
-        <p>イ{mondai_b}</p>
-        <p>ウ{mondai_c}</p>
-        <p>エ{mondai_d}</p> */}
+        
 
         <div id="time">
           
@@ -88,4 +85,4 @@ return (
       </footer>
     </div>
   )
-}
+// }
