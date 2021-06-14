@@ -1,78 +1,91 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useState} from 'react'
-import { setInterval } from 'timers'
+import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
-// import SyntaxHighlighter from 'react-syntax-highlighter';
-// import { monokaiSublime } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
-
+//宣言
 export default function Home() {
-  const [time, setTime] = useState(null)
+  const [mondaibun, setTime] = useState(null)
+  const [mondai_a, mondai_1] = useState(null)
+  const [mondai_b, mondai_2] = useState(null)
+  const [mondai_c, mondai_3] = useState(null)
+  const [mondai_d, mondai_4] = useState(null)
+  const [time, settimer] = useState(null)
   useEffect(() => {
-    fetch('/api/time')
+
+    //問題文をセットするAPI
+    fetch('/api/exaams')
       .then(res => res.json())
       .then(data => {
-        setTime(data.current_timestamp)
-      })
+        setTime(data[0].mondaibun)
+        mondai_1(data[0].houzi)
+        mondai_2(data[1].houzi)
+        mondai_3(data[2].houzi)
+        mondai_4(data[3].houzi)
 
-    }, [])
+        console.log(data)
+      });setInterval(() =>
+      {
+        count++;
 
-  //経過時間処理
-  var times = null;
-  var count = 0;
-  var minutes = 0;
-
-  function event() {
-    count++;
-
-    if(count == 60)
-    {
-      minutes += 1;
-    }
-
-    if(count < 60)
-    {
+  if(count == 60)
+  {
+    minutes += 1;
+  }
+  if(count < 60)
+  {
       if(minutes == 0)
       {
-        document.getElementById('timer').innerHTML = count + "秒";
+        settimer(count + "秒");
       }
       else
       {
-        document.getElementById('timer').innerHTML = minutes + "分" + count + "秒";
+        settimer(minutes + "分" + count + "秒");
       }
-    }
-    else
-    {
-      count = 0;
-        document.getElementById('timer').innerHTML = minutes + "分" + count + "秒";
-    }
+      
   }
-    //タイマー開始
-    times = setInterval(event, 1000);
-
-    return (
-      <div className={styles.container}>
-        <Head>
-          <meta charSet="UTF-8"/>
-          <title>模擬試験サイト</title>
-        </Head>
-
-          <main className={styles.main}>
-            <h1 className={styles.title}>
-              てすと
-            </h1>
-
-            <div id="time">
-              <p>経過時間:<label id="timer"/></p>
-            </div>
-
-            <p className={styles.description}></p>
-
-          </main>
-
-          <footer>
-          </footer>
-      </div>
-    )
+  else
+  {
+    count = 0;
+      settimer(minutes + "分" + count + "秒");
   }
+},1000);
+
+  },[])
+
+//経過時間処理
+var count = 0;
+var minutes = 0;
+
+return (
+  <div className={styles.container}>
+    <Head>
+      <meta charset="UTF-8"/>
+      <title>模擬試験サイト</title>
+    </Head>
+
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          てすと
+        </h1>
+          <p>問題</p>
+        <div >{mondaibun}</div>
+        <p>ア{mondai_a}</p>
+        <p>イ{mondai_b}</p>
+        <p>ウ{mondai_c}</p>
+        <p>エ{mondai_d}</p>
+
+        <div id="time">
+          
+          <p>経過時間:{time}</p>
+        </div>
+
+        <p className={styles.description}></p>
+
+        </main>
+
+      <footer>
+      </footer>
+    </div>
+  )
+}
