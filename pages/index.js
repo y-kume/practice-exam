@@ -1,27 +1,27 @@
 import Head from 'next/head'
 import Image from 'next/image'
-// import { useEffect, useState } from 'react'
-// import styles from '../styles/Home.module.css'
+import { useEffect, useState } from 'react'
+import styles from '../styles/Home.module.css'
 
-// //宣言
-// export default function Home() {
-//   const [mondaibun, setTime] = useState(null)
-//   const [mondai_a, mondai_1] = useState(null)
-//   const [mondai_b, mondai_2] = useState(null)
-//   const [mondai_c, mondai_3] = useState(null)
-//   const [mondai_d, mondai_4] = useState(null)
-//   const [time, settimer] = useState(null)
+//宣言
+export default function Home() {
+  const [mondaibun, setTime] = useState(null)
+  const [choice_a, mondai_1] = useState(null)
+  const [choice_b, mondai_2] = useState(null)
+  const [choice_c, mondai_3] = useState(null)
+  const [choice_d, mondai_4] = useState(null)
+  const [time, settimer] = useState(null)
   useEffect(() => {
 
     //問題文をセットするAPI
-    fetch('/api/exaams')
+    fetch('/api/questions')
       .then(res => res.json())
       .then(data => {
-        // setTime(data[0].mondaibun)
-        // mondai_1(data[0].houzi)
-        // mondai_2(data[1].houzi)
-        // mondai_3(data[2].houzi)
-        // mondai_4(data[3].houzi)
+        setTime(data[0].mondai_bun)
+        mondai_1(data[0].hyouji_mei)
+        mondai_2(data[1].hyouji_mei)
+        mondai_3(data[2].hyouji_mei)
+        mondai_4(data[3].hyouji_mei)
 
         console.log(data)
       });setInterval(() =>
@@ -65,12 +65,58 @@ return (
     </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          てすと
-        </h1>
-          <p>問題</p>
-        <div >{mondaibun}</div>
+        <header>
+            <div class="title">
+                <h1>web模擬試験</h1>
+            </div>
+        </header>
+
+        <div class="container1">
+            <div class="mondai">
+                <h1>ITパスポート試験H14春期</h1>
+
+                <section>
+                    <h2>問題〇</h2>
+                    <div>{mondaibun}</div>
+                    
+                    <div class="sentakushi">
+                        <p>ア{choice_a}</p>
+                        <p>イ{choice_b}</p>
+                        <p>ウ{choice_c}</p>
+                        <p>エ{choice_d}</p>
+                    </div>
+                    
+                </section>
+            </div>
+
+            <div class="menu">
+                <aside>
+                    <h2>メニュー</h2>
+                    <ul>
+                        <li><a href="https://www.jikkyo.co.jp/webmogi/">➪TOPページ</a></li>
+                        <p>教員用ログインページ</p>
+                        <li><a href="https://www.jikkyo.co.jp/webmogi/exam/select/27">➪試験中止</a></li>
+                        <p>受験履歴</p>
+                    </ul>
+                </aside>
+
+            </div>
+        </div>
         
+          <div class="kaito">
+            <table border="1" align="left">
+              
+              <tr><th>問題No.</th><td>1</td><td>2</td><td>3</td><td>4</td><td>……</td></tr>
+                
+              <tr><th>解答</th><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+
+              <tr><th>チェック</th><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+                
+            </table>
+          </div>
+
+          
+
 
         <div id="time">
           
@@ -85,4 +131,4 @@ return (
       </footer>
     </div>
   )
-// }
+}
