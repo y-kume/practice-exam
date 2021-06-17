@@ -36,18 +36,18 @@ export default function Home() {
   {
       if(minutes == 0)
       {
-        settimer(count + "秒");
+        settimer(count + '秒');
       }
       else
       {
-        settimer(minutes + "分" + count + "秒");
+        settimer(minutes + '分' + count + '秒');
       }
       
   }
   else
   {
     count = 0;
-      settimer(minutes + "分" + count + "秒");
+      settimer(minutes + '分' + count + '秒');
   }
 },1000);
 
@@ -60,26 +60,26 @@ var minutes = 0;
 return (
   <div className={styles.container}>
     <Head>
-      <meta charset="UTF-8"/>
+      <meta charset='UTF-8'/>
       <title>模擬試験サイト</title>
     </Head>
 
       <main className={styles.main}>
         <header>
-            <div class="title">
+            <div class='title'>
                 <h1>web模擬試験</h1>
             </div>
         </header>
 
-        <div class="container1">
-            <div class="mondai">
+        <div class='container1'>
+            <div class='mondai'>
                 <h1>ITパスポート試験H14春期</h1>
 
                 <section>
                     <h2>問題〇</h2>
                     <div>{mondaibun}</div>
                     
-                    <div class="sentakushi">
+                    <div class='sentakushi'>
                         <p>ア{choice_a}</p>
                         <p>イ{choice_b}</p>
                         <p>ウ{choice_c}</p>
@@ -89,13 +89,13 @@ return (
                 </section>
             </div>
 
-            <div class="menu">
+            <div class='menu'>
                 <aside>
                     <h2>メニュー</h2>
                     <ul>
-                        <li><a href="https://www.jikkyo.co.jp/webmogi/">➪TOPページ</a></li>
+                        <li><a href='https://www.jikkyo.co.jp/webmogi/'>➪TOPページ</a></li>
                         <p>教員用ログインページ</p>
-                        <li><a href="https://www.jikkyo.co.jp/webmogi/exam/select/27">➪試験中止</a></li>
+                        <li><a href='https://www.jikkyo.co.jp/webmogi/exam/select/27'>➪試験中止</a></li>
                         <p>受験履歴</p>
                     </ul>
                 </aside>
@@ -103,8 +103,8 @@ return (
             </div>
         </div>
         
-          <div class="kaito">
-            <table border="1" align="left">
+          <div class='kaito'>
+            <table border='1' align='left'>
               
               <tr><th>問題No.</th><td>1</td><td>2</td><td>3</td><td>4</td><td>……</td></tr>
                 
@@ -114,20 +114,39 @@ return (
                 
             </table>
           </div>
-
           
+          <table frame='border'>
 
+                    <tr>
+                        <th>解答欄</th>
+                        <input type='radio' name='sentaku'>ア</input>
+                        <input type='radio' name='sentaku'>イ</input>
+                        <input type='radio' name='sentaku'>ウ</input>
+                        <input type='radio' name='sentaku'>エ</input>
+                    </tr>
+                
+                </table>
 
-        <div id="time">
-          
-          <p>経過時間:{time}</p>
-        </div>
+                <div class="checkbox">
+                    <input type="checkbox">この問題を後で見直すためにチェックする</input>
+                </div>
+                                
+                <button type="button">次の問題へ➪</button>
+
+            <div class="time_answer">
+              <div id="time">
+                  <p>経過時間：{time}</p>
+              </div>
+              
+              <button type="button">採点する➪</button>
+            </div>
 
         <p className={styles.description}></p>
 
         </main>
 
       <footer>
+        <p>(c)アドレス</p>
       </footer>
     </div>
   )
