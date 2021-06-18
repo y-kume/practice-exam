@@ -116,19 +116,26 @@ return (
           </div>
           
           <table frame='border'>
-
-                    <tr>
-                        <th>解答欄</th>
-                        <input type='radio' name='sentaku'>ア</input>
-                        <input type='radio' name='sentaku'>イ</input>
-                        <input type='radio' name='sentaku'>ウ</input>
-                        <input type='radio' name='sentaku'>エ</input>
-                    </tr>
+            <tr>
+              <th>解答欄</th>
+                <label>
+                  <input type='radio' />ア
+                </label>
+                <label>
+                  <input type='radio'/>イ
+                </label>
+                <label>
+                  <input type='radio'/>ウ
+                </label>
+                <label>
+                  <input type='radio'/>エ
+                </label>
+            </tr>
                 
-                </table>
+          </table>
 
                 <div class="checkbox">
-                    <input type="checkbox">この問題を後で見直すためにチェックする</input>
+                    <input type="checkbox"/>この問題を後で見直すためにチェックする
                 </div>
                                 
                 <button type="button">次の問題へ➪</button>
