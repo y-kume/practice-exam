@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
+import styles from '../css/styles.css'
 
 //宣言
 export default function Home() {
@@ -53,6 +53,7 @@ export default function Home() {
 
   },[])
 
+
 //経過時間処理
 var count = 0;
 var minutes = 0;
@@ -66,20 +67,20 @@ return (
 
       <main className={styles.main}>
         <header>
-            <div class='title'>
+            <div className={styles.title}>
                 <h1>web模擬試験</h1>
             </div>
         </header>
 
-        <div class='container1'>
-            <div class='mondai'>
+        <div className={styles.container1}>
+            <div className={styles.mondai}>
                 <h1>ITパスポート試験H14春期</h1>
 
                 <section>
                     <h2>問題〇</h2>
                     <div>{mondaibun}</div>
                     
-                    <div class='sentakushi'>
+                    <div className={styles.sentakushi}>
                         <p>ア{choice_a}</p>
                         <p>イ{choice_b}</p>
                         <p>ウ{choice_c}</p>
@@ -89,7 +90,7 @@ return (
                 </section>
             </div>
 
-            <div class='menu'>
+            <div className={styles.menu}>
                 <aside>
                     <h2>メニュー</h2>
                     <ul>
@@ -103,7 +104,8 @@ return (
             </div>
         </div>
         
-          <div class='kaito'>
+        <div className={styles.container2}>
+          <div className={styles.kaito}>
             <table border='1' align='left'>
               
               <tr><th>問題No.</th><td>1</td><td>2</td><td>3</td><td>4</td><td>……</td></tr>
@@ -115,45 +117,47 @@ return (
             </table>
           </div>
           
-          <table frame='border'>
-            <tr>
-              <th>解答欄</th>
-                <label>
-                  <input type='radio' />ア
-                </label>
-                <label>
-                  <input type='radio'/>イ
-                </label>
-                <label>
-                  <input type='radio'/>ウ
-                </label>
-                <label>
-                  <input type='radio'/>エ
-                </label>
-            </tr>
-                
-          </table>
+          <div className={styles.kaito_ran}>
+            <table frame='border'>
+              <tr>
+                <th>解答欄</th>
+                  <label>
+                    <input type='radio' name='sentakushi' value='a'/>ア
+                  </label>
+                  <label>
+                    <input type='radio' name='sentakushi' value='i'/>イ
+                  </label>
+                  <label>
+                    <input type='radio' name='sentakushi' value='u'/>ウ
+                  </label>
+                  <label>
+                    <input type='radio' name='sentakushi' value='e'/>エ
+                  </label>
+              </tr>
+                  
+            </table>
+          </div>
 
-                <div class="checkbox">
+                <div div className={styles.checkbox}>
                     <input type="checkbox"/>この問題を後で見直すためにチェックする
                 </div>
                                 
                 <button type="button">次の問題へ➪</button>
 
-            <div class="time_answer">
+            <div className={styles.time_answer}>
               <div id="time">
                   <p>経過時間：{time}</p>
               </div>
               
               <button type="button">採点する➪</button>
             </div>
-
-        <p className={styles.description}></p>
-
-        </main>
+        </div>
+      </main>
 
       <footer>
-        <p>(c)アドレス</p>
+        <div className={styles.footer}>
+          <p>(c)アドレス</p>
+        </div>
       </footer>
     </div>
   )

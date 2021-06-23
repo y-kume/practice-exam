@@ -1,95 +1,102 @@
-body {
+.main {
     background-color: #dcdcdc;
-}
-
-header {
-    background-color:#00bfff;
-    padding-top: 1px;
-    padding-bottom: 1px;
-}
-
-.title h1 {
+  }
+  
+  .title h1 {
     font-weight: normal;
     font-size: 24px;
     color: #FFF;
     margin: 0px;
-}
-
-.mondai {
+    background-color:#00bfff;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  
+  .mondai {
     background-color: #FFF;
     border-radius: 5px;
     padding: 5px 5px 1000px 5px;
-}
-
-.mondai h1 {
+  }
+  
+  .mondai h1 {
     font-size: 20px;
     background-color: #808080;
     color: #FFF;
     border-radius: 5px;
     margin: 1px;
     padding: 5px 300px 5px 5px;
-}
-
-.mondai h2 {
+  }
+  
+  .mondai h2 {
     font-size: 18px;
     color: #5a7be0;
     margin: 5px;
-}
-
-.mondai p {
+  }
+  
+  .mondai p {
     margin: 5px;
-}
-
-.sentakushi {
+  }
+  
+  .sentakushi {
     position: relative;
     top: 50px;
-}
-
-.container1{
+  }
+  
+  .container1{
     width: 800px;
     display: flex;
-}
-
-.menu{
+  }
+  
+  .menu{
     width: 20%;
     position: relative;
     left: 15px;
     background-color: #FFF;
     border-radius: 5px;
     padding: 5px;
-}
-
-.menu h2{
+  }
+  
+  .menu h2{
     font-size: 17px;
     text-align: center;
     background-color: #a9a9a9;
     color: #FFF;
     border-radius: 3px;
-}
-
-.menu ul {
+  }
+  
+  .menu ul {
     list-style-type: none;
     padding-left: 0px;
     font-size: 12px;
-}
-
-.menu li{
+  }
+  
+  .menu li{
     border-bottom: 1px dotted black;
-}
-
-.menu p{
+  }
+  
+  .menu p{
     border-bottom: 1px dotted black;
-}
-
-.container2{
+  }
+  
+  .container2{
     width: 800px;
     margin: 0px auto;
     display: flex;
     position: relative;
     background-color: #dcf3f3;
-}
-
-.kaito_ran button {
+  }
+  
+  .kaito{
+    padding: 5px 5px; /*上下 左右*/
+    border: solid 1px #a9a9a9; /*線の種類 太さ 色 */
+  }
+  
+  .kaito table {
+    border-collapse: collapse;
+    background-color: #FFF;
+  }
+  
+  .kaito_ran button {
     /* ブラウザ特有のスタイルを無効に */
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -108,53 +115,43 @@ header {
   }
   
   /* ホバー時（カーソルをのせた時）の見た目 */
-.kaito_ran button:hover {
+  .kaito_ran button:hover {
     background-color: #064fda; /* 背景色 */
   }
-
-.checkbox {
+  
+  .checkbox {
     position: relative;
     top: 5px;
-}
-
-.kaito table {
-    border-collapse: collapse;
-    background-color: #FFF;
   }
-
-.kaito th, td {
-    padding: 5px 5px; /* 上下 左右 */
-    border: solid 1px #a9a9a9; /* 線の種類 太さ 色 */
-  }
-
-.kaito_ran {
+  
+  .kaito_ran {
     position: relative;
     left: 10px;
-}
-
-.kaito_ran button {
+  }
+  
+  .kaito_ran button {
     position: relative; /* 今の位置を基準 */
     bottom: 10px;
     left: 3px;
-}
-
-.kaito_ran table {
+  }
+  
+  .kaito_ran table {
     background-color: #afeeee;
     border: solid 2px #00bfff;
     border-radius: 3px;
-}
-
-.time_answer {
+  }
+  
+  .time_answer {
     position: relative;
     left: 50px;
-}
-
-.time_answer p {
+  }
+  
+  .time_answer p {
     background-color: #696969;
     color: #FFF;
-}
-
-.time_answer button {
+  }
+  
+  .time_answer button {
     /* ブラウザ特有のスタイルを無効に */
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -173,11 +170,11 @@ header {
   }
   
   /* ホバー時（カーソルをのせた時）の見た目 */
-.time_answer button:hover {
+  .time_answer button:hover {
     background-color: #ffa500; /* 背景色 */
   }
-
-footer p {
+  
+  .footer p {
     text-align: center;
     font-size: 14px;
     margin-bottom: 60px;
@@ -186,5 +183,5 @@ footer p {
     background-color: #FFF;
     margin: 0px;
     padding: 10px;
-}
-
+  }
+  
